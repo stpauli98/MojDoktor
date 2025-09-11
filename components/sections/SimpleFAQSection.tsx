@@ -72,10 +72,12 @@ export default function SimpleFAQSection() {
             <button 
               onClick={() => {
                 const target = document.querySelector('#waitlist-form') as HTMLElement
-                if (target && window.locomotiveScroll) {
-                  window.locomotiveScroll.scrollTo(target)
-                } else {
-                  target?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                if (target && (window as any).locomotiveScroll) {
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  (window as any).locomotiveScroll.scrollTo(target)
+                } else if (target) {
+                  target.scrollIntoView({ behavior: 'smooth', block: 'center' })
                 }
               }}
               className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold transition-colors"

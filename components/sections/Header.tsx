@@ -8,13 +8,22 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const scrollToTop = useCallback(() => {
-    const target = document.querySelector('#waitlist-form')
-    if (!target) return
-    
-    if (window.locomotiveScroll) {
-      window.locomotiveScroll.scrollTo(target as HTMLElement)
-    } else {
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    try {
+      const target = document.querySelector('#waitlist-form')
+      if (!target) {
+        console.warn('Waitlist form not found')
+        return
+      }
+      
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if ((window as any).locomotiveScroll) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).locomotiveScroll.scrollTo(target as HTMLElement)
+      } else {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    } catch (error) {
+      console.error('Error scrolling to waitlist form:', error)
     }
   }, [])
 
@@ -26,7 +35,7 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-      isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-background/80 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">

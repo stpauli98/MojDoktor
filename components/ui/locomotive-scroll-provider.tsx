@@ -44,7 +44,8 @@ export function LocomotiveScrollProvider({ children }: LocomotiveScrollProviderP
 
         // Store instance globally and locally
         scrollRef.current = locomotiveScroll
-        window.locomotiveScroll = locomotiveScroll
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ;(window as any).locomotiveScroll = locomotiveScroll
 
         return () => {
           window.removeEventListener('resize', handleResize)
@@ -78,8 +79,10 @@ export function LocomotiveScrollProvider({ children }: LocomotiveScrollProviderP
 // Export scroll utilities
 export const useLocomotiveScroll = () => {
   const scrollTo = (target: string | HTMLElement) => {
-    if (window.locomotiveScroll) {
-      window.locomotiveScroll.scrollTo(target)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((window as any).locomotiveScroll) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(window as any).locomotiveScroll.scrollTo(target)
     }
   }
 

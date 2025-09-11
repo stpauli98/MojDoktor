@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
+import StructuredData from "@/components/seo/StructuredData"
 import { Suspense } from "react"
 import { LocomotiveScrollProvider } from "@/components/ui/locomotive-scroll-provider"
 import "./globals.css"
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
   description:
     "DoktorOnline je prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online. Pretraga po gradu i specijalizaciji.",
   keywords: "doktor online, ljekar BiH, zakazivanje termina, medicinska platforma, zdravstvo BiH",
+
+  metadataBase: new URL("https://doktoronline.ba"),
+  alternates: {
+    canonical: "/"
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
@@ -32,7 +38,14 @@ export const metadata: Metadata = {
     description: "Prva platforma u BiH za pronalaženje doktora i zakazivanje termina online",
     url: "https://doktoronline.ba",
     type: "website",
+    locale: "bs_BA",
+    siteName: "DoktorOnline"
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "DoktorOnline - Pronađi Doktora u BiH",
+    description: "Prva platforma u BiH za pronalaženje doktora i zakazivanje termina online"
+  }
 }
 
 export default function RootLayout({
@@ -43,8 +56,9 @@ export default function RootLayout({
   return (
     <html lang="bs">
       <body className={`font-sans ${inter.variable} ${GeistMono.variable}`}>
+        <StructuredData />
         <LocomotiveScrollProvider>
-          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          <Suspense fallback={<div>Učitavanje...</div>}>{children}</Suspense>
         </LocomotiveScrollProvider>
         <Analytics />
       </body>

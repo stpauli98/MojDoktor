@@ -3,7 +3,6 @@ import HeroSection from "@/components/sections/HeroSection"
 import MarketplaceExplanationSection from "@/components/sections/MarketplaceExplanationSection"
 import DoctorSolutionSection from "@/components/sections/DoctorSolutionSection"
 import SimpleFAQSection from "@/components/sections/SimpleFAQSection"
-import WaitlistSection from "@/components/sections/WaitlistSection"
 import Footer from "@/components/sections/Footer"
 
 export default function HomePage() {
@@ -21,9 +20,6 @@ export default function HomePage() {
       </div>
       <div data-scroll-section>
         <SimpleFAQSection />
-      </div>
-      <div data-scroll-section>
-        <WaitlistSection />
       </div>
       <div data-scroll-section>
         <Footer />
