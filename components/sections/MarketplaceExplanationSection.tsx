@@ -1,3 +1,5 @@
+"use client"
+
 import { Search } from "lucide-react"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 
@@ -69,10 +71,19 @@ export default function MarketplaceExplanationSection() {
           <h3 className="text-xl font-bold mb-4">
             Budite među prvima na platformi = budite prvi u rezultatima
           </h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
             Doktori koji se registruju sada imaju prednost. Kada platforma postane popularna, 
             vi ćete već imati recenzije, optimizovan profil i bolju poziciju u pretrazi.
           </p>
+          <button 
+            onClick={() => document.querySelector('#waitlist-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+            className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold transition-colors"
+          >
+            Registruj ordinaciju sada
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
         </div>
       </div>
     </SectionWrapper>

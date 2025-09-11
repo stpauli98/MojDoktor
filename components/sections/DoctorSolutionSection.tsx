@@ -1,3 +1,5 @@
+"use client"
+
 import { CheckCircle, Calendar, Users, Globe, MessageSquare, ChartBar, Bell } from "lucide-react"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { IconCard } from "@/components/ui/icon-card"
@@ -97,6 +99,27 @@ export default function DoctorSolutionSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-4">
+              Spremni ste da povećate broj pacijenata?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Registrujte svoju ordinaciju danas i budite među prvima na DoktorOnline platformi.
+            </p>
+            <button 
+              onClick={() => document.querySelector('#waitlist-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+              className="inline-flex items-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold text-lg transition-colors shadow-lg"
+            >
+              Registruj ordinaciju besplatno
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

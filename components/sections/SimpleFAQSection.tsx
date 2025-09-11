@@ -59,6 +59,27 @@ export default function SimpleFAQSection() {
             </div>
           ))}
         </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center">
+          <div className="bg-primary/10 rounded-2xl p-8">
+            <h3 className="text-xl font-bold mb-4">
+              Još uvijek imate pitanja?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+              Registrujte se na listu čekanja i naš tim će vam odgovoriti na sva pitanja.
+            </p>
+            <button 
+              onClick={() => document.querySelector('#waitlist-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+              className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold transition-colors"
+            >
+              Kontaktiraj nas
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </SectionWrapper>
   )

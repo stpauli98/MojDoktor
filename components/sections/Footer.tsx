@@ -30,7 +30,7 @@ export default function Footer() {
               <li>
                 <a href="tel:+38761234567" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  +387 61 234 567
+                  +387 66 603 900
                 </a>
               </li>
               <li className="text-muted-foreground flex items-start gap-2">
