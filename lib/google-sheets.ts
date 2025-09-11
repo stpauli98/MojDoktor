@@ -14,7 +14,7 @@ export async function appendToSheet(values: string[]) {
   try {
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEETS_ID,
-      range: 'Sheet1!A:E', // Columns: Email, Name, Type, Timestamp, Status
+      range: 'Sheet1!A:C', // Columns: Email, Timestamp, Follow_Up_Status
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [values],

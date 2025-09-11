@@ -2,25 +2,27 @@
 
 import { Button } from "@/components/ui/button"
 import { Stethoscope, ArrowRight } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+  const scrollToTop = useCallback(() => {
+    const target = document.querySelector('#waitlist-form')
+    if (!target) return
+    
+    if (window.locomotiveScroll) {
+      window.locomotiveScroll.scrollTo(target as HTMLElement)
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToTop = () => {
-    document.querySelector('#waitlist-form')?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'center'
-    })
-  }
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all ${
@@ -39,6 +41,7 @@ export default function Header() {
             onClick={scrollToTop}
             size="sm" 
             className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            aria-label="Scroll to waitlist signup form"
           >
             <span className="hidden sm:inline">Pridruži se listi</span>
             <span className="sm:hidden">Prijavi se</span>

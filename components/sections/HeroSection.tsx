@@ -1,6 +1,5 @@
 import { TrendingUp, Users, Clock } from "lucide-react"
-import { EmailSignupForm } from "@/components/ui/email-signup-form"
-
+import WaitlistSection from "./WaitlistSection"
 export default function HeroSection() {
   return (
     <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-br from-background via-primary/5 to-background">
@@ -36,18 +35,7 @@ export default function HeroSection() {
               <p className="text-sm text-muted-foreground">kada traže doktore</p>
             </div>
           </div>
-
-          {/* Waitlist Form */}
-          <EmailSignupForm 
-            id="waitlist-form"
-            title="🩺 Postanite dio prve medicinske platforme u BiH"
-            subtitle="Prijavite se da saznate više i budete među prvima kada pokrenemo"
-            buttonText="Prijavite ordinaciju"
-            successTitle="Hvala za interes! 🎉"
-            successMessage="Kontaktiraćemo vas uskoro da razgovaramo o vašim potrebama i kako DoktorOnline može pomoći."
-            className="mb-0"
-          />
-
+          <WaitlistSection />
         </div>
       </div>
     </section>

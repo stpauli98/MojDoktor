@@ -5,7 +5,7 @@ import { sendWelcomeEmail } from '@/lib/email'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { email, name, type = 'ordinacija' } = body
+    const { email } = body
 
     // Validate email
     if (!email || !email.includes('@')) {
@@ -36,14 +36,12 @@ export async function POST(request: Request) {
     
     await appendToSheet([
       email,
-      name || '',
-      type,
       timestamp,
-      'Pending'
+      'pending'
     ])
 
     // Send welcome email
-    await sendWelcomeEmail(email, name)
+    await sendWelcomeEmail(email)
 
     return NextResponse.json({ 
       success: true,

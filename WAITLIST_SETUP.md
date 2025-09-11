@@ -8,10 +8,8 @@
 3. Nazovite ga "DoktorOnline Waitlist"
 4. U prvi red dodajte headers:
    - A1: Email
-   - B1: Name
-   - C1: Type
-   - D1: Timestamp
-   - E1: Status
+   - B1: Timestamp
+   - C1: Follow_Up_Status
 
 ### Kopirajte Spreadsheet ID:
 - Iz URL-a: `https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit`

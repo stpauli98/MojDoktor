@@ -112,7 +112,14 @@ export default function DoctorSolutionSection() {
               Registrujte svoju ordinaciju danas i budite među prvima na DoktorOnline platformi.
             </p>
             <button 
-              onClick={() => document.querySelector('#waitlist-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+              onClick={() => {
+                const target = document.querySelector('#waitlist-form') as HTMLElement
+                if (target && window.locomotiveScroll) {
+                  window.locomotiveScroll.scrollTo(target)
+                } else {
+                  target?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                }
+              }}
               className="inline-flex items-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold text-lg transition-colors shadow-lg"
             >
               Registruj ordinaciju besplatno

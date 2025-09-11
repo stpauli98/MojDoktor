@@ -8,13 +8,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function sendWelcomeEmail(email: string, name?: string) {
+export async function sendWelcomeEmail(email: string) {
   const mailOptions = {
     from: `DoktorOnline <${process.env.EMAIL_USER}>`,
     replyTo: 'support@doktoronline.ba',
     to: email,
     subject: 'Dobrodošli na DoktorOnline listu čekanja 🎉',
-    text: `Hvala na prijavi${name ? `, ${name}` : ''}! Javimo se u 48h... 
+    text: `Hvala na prijavi! Javimo se u 48h... 
 Prednosti: bolja pozicija, 6 mjeseci besplatno, 50% popusta zauvijek.
 Pitanja? +387 66 603 900`,
     headers: {
@@ -36,7 +36,7 @@ Pitanja? +387 66 603 900`,
             <tr>
               <td style="padding:30px;background:#f9f9f9">
                 <h2 style="margin:0 0 10px 0;font-size:18px;color:#111">
-                  Hvala što ste se prijavili${name ? `, ${name}` : ''}!
+                  Hvala što ste se prijavili!
                 </h2>
                 <p style="margin:0 0 16px 0;color:#333">Uspješno ste upisani na listu čekanja. Javićemo se u roku od 48h.</p>
                 <h3 style="margin:20px 0 8px 0;font-size:16px;color:#111">Zašto je važno?</h3>
