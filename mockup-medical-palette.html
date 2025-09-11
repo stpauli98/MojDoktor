@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicinska paleta — Mockup v2 (kontrast-friendly)</title>
+  <style>
+    :root{
+      /* Tvoja paleta */
+      --medical-blue: #1e40af;      /* Primarno: povjerenje, sigurnost */
+      --medical-teal: #0d9488;      /* Sekundarno: zdravlje, svježina  */
+      --medical-green: #059669;     /* Status OK / pozitivno            */
+      --medical-red: #dc2626;       /* Upozorenja / hitno               */
+      --medical-gray: #6b7280;      /* Sekundarni tekst / neutralno     */
+      --medical-white: #ffffff;     /* Pozadina / čistoća               */
+
+      /* Dodatne nijanse za kontrast i UI */
+      --ink: #0f172a;               /* Primarni tekst na svijetloj      */
+      --bg: #f7f8fb;                /* Opća pozadina stranice           */
+      --card: #ffffff;              /* Kartice                          */
+      --border: #e5e7eb;            /* Linije / rubovi                  */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    .container{max-width:1180px;margin:28px auto;padding:0 16px}
+
+    /* Header */
+    .header{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 16px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{font-weight:800;color:var(--medical-blue);letter-spacing:.2px}
+    .nav a{color:#334155;text-decoration:none;margin-left:14px}
+    .nav a:hover{color:var(--medical-blue)}
+
+    /* Hero */
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:20px
+    }
+    .panel{
+      background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px
+    }
+    h1{font-size:28px;line-height:1.2;margin:0 0 10px}
+    .lead{margin:0 0 16px;color:#1f2937}
+    .search{display:flex;gap:10px;flex-wrap:wrap}
+    .input{flex:1;min-width:220px;padding:12px;border-radius:10px;border:1px solid #cbd5e1;background:#fff}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--medical-blue);color:#fff}
+    .btn-primary:focus,.btn-primary:hover{filter:brightness(1.05)}
+    .btn-secondary{background:var(--medical-teal);color:#fff}
+    .btn-quiet{background:#fff;border-color:#cbd5e1;color:var(--ink)}
+
+    /* Badges & alerts (kontrast testiran) */
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    .badge-ok{background:#ecfdf5;color:#065f46;border:1px solid #bbf7d0}        /* green on pale green */
+    .badge-warn{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}      /* orange-ish warning */
+
+    .alert{padding:12px 14px;border-radius:12px;border:1px solid transparent;margin-top:10px}
+    .alert-ok{background:#ecfdf5;border-color:#bbf7d0;color:#065f46}
+    .alert-err{background:#fef2f2;border-color:#fecaca;color:#7f1d1d}           /* crveni alert na svijetlom */
+
+    /* Cards list */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .card h3{margin:0 0 6px}
+    .meta{color:#374151;margin:0 0 10px}
+    .pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2ff;color:#1e40af;font-weight:700;font-size:12px;border:1px solid #c7d2fe}
+
+    /* Section headings */
+    .section{margin-top:28px}
+    .section h2{font-size:20px;margin:0 0 10px}
+
+    /* Dark panel demo (bijeli tekst na plavom) */
+    .dark-panel{
+      background:var(--medical-blue);color:#fff;border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,.12)
+    }
+    .dark-panel p{opacity:.95}
+
+    /* Footer */
+    .footer{margin:28px 0 12px;color:#475569;font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .cards{grid-template-columns:1fr}
+      h1{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header" role="banner">
+      <div class="logo">Doktor.ba</div>
+      <nav class="nav" aria-label="Glavna navigacija">
+        <a href="#">Specijalizacije</a>
+        <a href="#">Gradovi</a>
+        <a href="#">Za ordinacije</a>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero" role="region" aria-label="Hero pretraga">
+      <div class="panel">
+        <h1>Pronađite svog doktora u BiH</h1>
+        <p class="lead">Pretraga po specijalizaciji i gradu — za tri klika do profila ordinacije.</p>
+        <div class="search" role="search">
+          <input class="input" placeholder="Specijalizacija (npr. Stomatolog)" aria-label="Specijalizacija"/>
+          <input class="input" placeholder="Grad (npr. Banja Luka)" aria-label="Grad"/>
+          <button class="btn btn-primary" aria-label="Pretraži">Pretraži</button>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <span class="badge badge-ok">✓ Verified</span>
+          <span class="badge badge-warn">⚠ Hitno</span>
+          <span class="pill">#1e40af</span>
+          <span class="pill">#0d9488</span>
+        </div>
+        <div class="alert alert-ok">✔ Prima kartice • Otvoreno danas do 18:00</div>
+        <div class="alert alert-err">❗ Za hitne slučajeve koristite urgentni broj</div>
+      </div>
+
+      <div class="panel">
+        <div class="dark-panel">
+          <h2 style="margin:0 0 6px">Primarni CTA na tamnoj</h2>
+          <p style="margin:0 0 12px">Bijeli tekst na plavoj (#1e40af) ima odličan kontrast — sigurno za naslove i CTA.</p>
+          <div class="row">
+            <button class="btn btn-secondary" aria-label="Pozovi ordinaciju">Pozovi</button>
+            <button class="btn btn-quiet" style="background:#ffffff;color:#0f172a" aria-label="Navigacija">Navigacija</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swatches -->
+    <div class="section">
+      <h2>Paleta (swatches)</h2>
+      <div class="cards" role="list">
+        <div class="card" role="listitem">
+          <div style="height:84px;background:#1e40af;border-radius:10px;margin-bottom:10px"></div>
+          <strong>medical-blue</strong><br>#1e40af
+        </div>
+        <div class="card" role="listitem">
+          <div style="height:84px;background:#0d9488;border-radius:10px;margin-bottom:10px"></div>
+          <strong>medical-teal</strong><br>#0d9488
+        </div>
+        <div class="card" role="listitem">
+          <div style="height:84px;background:#059669;border-radius:10px;margin-bottom:10px"></div>
+          <strong>medical-green</strong><br>#059669
+        </div>
+        <div class="card" role="listitem">
+          <div style="height:84px;background:#dc2626;border-radius:10px;margin-bottom:10px"></div>
+          <strong>medical-red</strong><br>#dc2626
+        </div>
+        <div class="card" role="listitem">
+          <div style="height:84px;background:#6b7280;border-radius:10px;margin-bottom:10px"></div>
+          <strong>medical-gray</strong><br>#6b7280
+        </div>
+        <div class="card" role="listitem">
+          <div style="height:84px;background:#ffffff;border:1px solid var(--border);border-radius:10px;margin-bottom:10px"></div>
+          <strong>medical-white</strong><br>#ffffff
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards demo -->
+    <div class="section">
+      <h2>Primjeri kartica ordinacija</h2>
+      <div class="cards" role="list">
+        <div class="card" role="listitem">
+          <h3>Ordinacija „Smile+”</h3>
+          <p class="meta">Stomatolog • Banja Luka</p>
+          <div class="row">
+            <button class="btn btn-primary">Pogledaj profil</button>
+            <button class="btn btn-quiet">Pozovi</button>
+          </div>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Dentis Care</h3>
+          <p class="meta">Stomatolog • Sarajevo</p>
+          <div class="row">
+            <button class="btn btn-primary">Pogledaj profil</button>
+            <button class="btn btn-quiet">Navigacija</button>
+          </div>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Orto & Smile</h3>
+          <p class="meta">Ortodont • Mostar</p>
+          <div class="row">
+            <button class="btn btn-secondary">Zakaži</button>
+            <button class="btn btn-quiet">Kontakt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer">© Doktor.ba — demo maketa palete i komponenti</p>
+  </div>
+</body>
+</html>
