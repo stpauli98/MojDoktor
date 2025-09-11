@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Stethoscope className="w-6 h-6 text-primary" />
-              <span className="text-lg font-bold text-foreground">MojDoktor</span>
+              <span className="text-lg font-bold text-foreground">DoktorOnline</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Digitalna platforma koja automatizuje ordinacije i dovodi nove pacijente.
@@ -22,9 +22,9 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-foreground">Kontakt</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="mailto:info@mojdoktor.ba" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                <a href="mailto:info@doktoronline.ba" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  info@mojdoktor.ba
+                  info@doktoronline.ba
                 </a>
               </li>
               <li>

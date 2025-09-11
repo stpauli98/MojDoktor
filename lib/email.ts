@@ -10,15 +10,15 @@ const transporter = nodemailer.createTransport({
 
 export async function sendWelcomeEmail(email: string, name?: string) {
   const mailOptions = {
-    from: `MojDoktor <${process.env.EMAIL_USER}>`,
-    replyTo: 'support@mojdoktor.ba',
+    from: `DoktorOnline <${process.env.EMAIL_USER}>`,
+    replyTo: 'support@doktoronline.ba',
     to: email,
-    subject: 'Dobrodošli na MojDoktor listu čekanja 🎉',
+    subject: 'Dobrodošli na DoktorOnline listu čekanja 🎉',
     text: `Hvala na prijavi${name ? `, ${name}` : ''}! Javimo se u 48h... 
 Prednosti: bolja pozicija, 6 mjeseci besplatno, 50% popusta zauvijek.
 Pitanja? +387 66 603 900`,
     headers: {
-      'List-Unsubscribe': '<mailto:unsubscribe@mojdoktor.ba>'
+      'List-Unsubscribe': '<mailto:unsubscribe@doktoronline.ba>'
     },
     html: `
     <div style="display:none;max-height:0;overflow:hidden;opacity:0">
@@ -30,7 +30,7 @@ Pitanja? +387 66 603 900`,
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;font-family:Arial,Helvetica,sans-serif">
             <tr>
               <td style="background:#0066cc;color:#fff;padding:30px;text-align:center">
-                <h1 style="margin:0;font-size:24px;line-height:1.3">Dobrodošli na MojDoktor! 🩺</h1>
+                <h1 style="margin:0;font-size:24px;line-height:1.3">Dobrodošli na DoktorOnline! 🩺</h1>
               </td>
             </tr>
             <tr>
@@ -46,7 +46,7 @@ Pitanja? +387 66 603 900`,
                   <li>50% popusta zauvijek</li>
                 </ul>
                 <p style="margin:20px 0">
-                  <a href="https://mojdoktor.ba/za-ordinacije" 
+                  <a href="https://doktoronline.ba/za-ordinacije" 
                      style="background:#0066cc;color:#fff;text-decoration:none;padding:12px 24px;border-radius:6px;display:inline-block">
                      Saznaj više
                   </a>
@@ -59,8 +59,8 @@ Pitanja? +387 66 603 900`,
             </tr>
             <tr>
               <td style="padding:20px;text-align:center;color:#666;font-size:12px">
-                MojDoktor | Gradiška, BiH • 
-                <a href="https://mojdoktor.ba/privatnost" style="color:#444">Politika privatnosti</a>
+                DoktorOnline | Gradiška, BiH • 
+                <a href="https://doktoronline.ba/privatnost" style="color:#444">Politika privatnosti</a>
               </td>
             </tr>
           </table>

@@ -6,8 +6,8 @@ import { SectionWrapper } from "@/components/ui/section-wrapper"
 
 const faqs = [
   {
-    question: "Šta je MojDoktor?",
-    answer: "MojDoktor je prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online - sve na jednom mjestu."
+    question: "Šta je DoktorOnline?",
+    answer: "DoktorOnline je prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online - sve na jednom mjestu."
   },
   {
     question: "Kako će pacijenti pronaći moju ordinaciju?",

@@ -60,7 +60,7 @@ export default function DoctorSolutionSection() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Zašto biti na MojDoktor platformi?
+                  Zašto biti na DoktorOnline platformi?
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">

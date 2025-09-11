@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useToast } from "@/hooks/use-toast"
 
 interface EmailSignupFormProps {
   id?: string
@@ -32,6 +33,7 @@ export function EmailSignupForm({
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,10 +53,18 @@ export function EmailSignupForm({
       if (response.ok) {
         setIsSubmitted(true)
       } else {
-        alert(data.error || 'Greška pri prijavi. Molimo pokušajte ponovo.')
+        toast({
+          title: "Greška",
+          description: data.error || 'Greška pri prijavi. Molimo pokušajte ponovo.',
+          variant: "destructive",
+        })
       }
-    } catch (error) {
-      alert('Greška pri prijavi. Molimo pokušajte ponovo.')
+    } catch {
+      toast({
+        title: "Greška",
+        description: 'Greška pri prijavi. Molimo pokušajte ponovo.',
+        variant: "destructive",
+      })
     }
     
     setIsLoading(false)

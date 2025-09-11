@@ -1,4 +1,4 @@
-import { CheckCircle, TrendingUp, Users, Clock } from "lucide-react"
+import { TrendingUp, Users, Clock } from "lucide-react"
 import { EmailSignupForm } from "@/components/ui/email-signup-form"
 
 export default function HeroSection() {
@@ -44,7 +44,7 @@ export default function HeroSection() {
             subtitle="Prijavite se da saznate više i budete među prvima kada pokrenemo"
             buttonText="Prijavite ordinaciju"
             successTitle="Hvala za interes! 🎉"
-            successMessage="Kontaktiraćemo vas uskoro da razgovaramo o vašim potrebama i kako MojDoktor može pomoći."
+            successMessage="Kontaktiraćemo vas uskoro da razgovaramo o vašim potrebama i kako DoktorOnline može pomoći."
             className="mb-0"
           />
 

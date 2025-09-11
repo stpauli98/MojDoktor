@@ -14,10 +14,16 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Pronađi Doktora - Medicinski Direktorij BiH",
+  title: "DoktorOnline - Pronađi Doktora u BiH",
   description:
-    "Pronađite svog doktora u Bosni i Hercegovini za 3 klika. Pretraga po gradu, specijalizaciji i raspoloživosti.",
-  generator: "v0.app",
+    "DoktorOnline je prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online. Pretraga po gradu i specijalizaciji.",
+  keywords: "doktor online, ljekar BiH, zakazivanje termina, medicinska platforma, zdravstvo BiH",
+  openGraph: {
+    title: "DoktorOnline - Pronađi Doktora u BiH",
+    description: "Prva platforma u BiH za pronalaženje doktora i zakazivanje termina online",
+    url: "https://doktoronline.ba",
+    type: "website",
+  },
 }
 
 export default function RootLayout({

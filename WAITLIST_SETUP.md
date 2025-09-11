@@ -5,7 +5,7 @@
 ### Kreirajte Google Sheet:
 1. Idite na [Google Sheets](https://sheets.google.com)
 2. Kreirajte novi spreadsheet
-3. Nazovite ga "MojDoktor Waitlist"
+3. Nazovite ga "DoktorOnline Waitlist"
 4. U prvi red dodajte headers:
    - A1: Email
    - B1: Name
@@ -30,7 +30,7 @@
 ### Kreirajte credentials:
 1. Idite na "APIs & Services" > "Credentials"
 2. Kliknite "Create Credentials" > "Service Account"
-3. Unesite ime (npr. "mojdoktor-sheets")
+3. Unesite ime (npr. "doktoronline-sheets")
 4. Kliknite "Create and Continue"
 5. Skip grant access (kliknite "Continue")
 6. Kliknite "Done"
@@ -58,7 +58,7 @@
 ### Kreirajte App Password:
 1. Idite na [App Passwords](https://myaccount.google.com/apppasswords)
 2. Odaberite "Mail"
-3. Odaberite "Other" i unesite "MojDoktor"
+3. Odaberite "Other" i unesite "DoktorOnline"
 4. Kopirajte generirani password (16 karaktera)
 
 ## 4. Environment Variables
@@ -76,7 +76,7 @@ EMAIL_USER=your.email@gmail.com
 EMAIL_PASS=your_16_char_app_password
 
 # Site
-NEXT_PUBLIC_SITE_URL=https://mojdoktor.ba
+NEXT_PUBLIC_SITE_URL=https://doktoronline.ba
 ```
 
 **VAŽNO**: 

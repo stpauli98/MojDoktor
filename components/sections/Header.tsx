@@ -31,7 +31,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Stethoscope className="w-7 h-7 text-primary" />
-            <span className="text-lg font-bold text-foreground">MojDoktor</span>
+            <span className="text-lg font-bold text-foreground">DoktorOnline</span>
           </div>
 
           {/* Single CTA */}
