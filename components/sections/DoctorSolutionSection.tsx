@@ -40,7 +40,7 @@ const solutions = [
 export default function DoctorSolutionSection() {
   return (
     <SectionWrapper
-      badge="KAKO FUNKCIONIŠE MOJDOKTOR"
+      badge="KAKO FUNKCIONIŠE DOKTORONLINE"
       title="Platforma gdje pacijenti pronalaze doktore"
       subtitle="Budite vidljivi tamo gdje pacijenti aktivno traže doktore"
     >

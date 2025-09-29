@@ -1,4 +1,4 @@
-# Suggested Commands for MojDoktor
+# Suggested Commands for DoktorOnline
 
 ## Development Commands
 ```bash

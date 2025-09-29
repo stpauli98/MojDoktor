@@ -11,14 +11,14 @@ const transporter = nodemailer.createTransport({
 export async function sendWelcomeEmail(email: string) {
   const mailOptions = {
     from: `DoktorOnline <${process.env.EMAIL_USER}>`,
-    replyTo: 'support@doktoronline.ba',
+    replyTo: 'pixelnext9@gmail.com',
     to: email,
     subject: 'Dobrodošli na DoktorOnline listu čekanja 🎉',
     text: `Hvala na prijavi! Javimo se u 48h... 
 Prednosti: bolja pozicija, 6 mjeseci besplatno, 50% popusta zauvijek.
 Pitanja? +387 66 603 900`,
     headers: {
-      'List-Unsubscribe': '<mailto:unsubscribe@doktoronline.ba>'
+      'List-Unsubscribe': '<mailto:pixelnext9@gmail.com>'
     },
     html: `
     <div style="display:none;max-height:0;overflow:hidden;opacity:0">

@@ -1,7 +1,7 @@
-# MojDoktor Project Overview
+# DoktorOnline Project Overview
 
 ## Purpose
-Landing page for MojDoktor - medical platform connecting patients with doctors in Bosnia & Herzegovina. Positioned as "Booking.com for doctors" with waitlist signup functionality.
+Landing page for DoktorOnline - medical platform connecting patients with doctors in Bosnia & Herzegovina. Positioned as "Booking.com for doctors" with waitlist signup functionality.
 
 ## Tech Stack
 - **Framework**: Next.js 14 with TypeScript

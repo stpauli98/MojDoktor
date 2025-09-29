@@ -14,7 +14,7 @@ export default function Footer() {
               Digitalna platforma koja automatizuje ordinacije i dovodi nove pacijente.
             </p>
             <p className="text-xs text-muted-foreground/70 mt-2">
-              Pokrećemo uskoro • 2025
+              Pokrećemo uskoro • 2026
             </p>
           </div>
           
@@ -22,13 +22,13 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-foreground">Kontakt</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="mailto:info@doktoronline.ba" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                <a href="mailto:pixelnext9@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  info@doktoronline.ba
+                  pixelnext9@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+38761234567" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                <a href="tel:+38766603900" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
                   <Phone className="w-4 h-4" />
                   +387 66 603 900
                 </a>

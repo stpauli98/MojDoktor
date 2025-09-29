@@ -1,4 +1,4 @@
-# MojDoktor Improvement Priorities
+# DoktorOnline Improvement Priorities
 
 ## 🔴 Critical Issues (Fix First)
 1. **Dependency Cleanup** 
