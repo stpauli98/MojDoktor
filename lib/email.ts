@@ -8,16 +8,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function sendWelcomeEmail(email: string, formUrl: string = "https://docs.google.com/forms/d/e/1FAIpQLScs7Z55FqCM_4Nablz5y5vgQ0PhYGu2cM7kJZbmfihF3N9W0g/viewform?usp=dialog") {
+export async function sendWelcomeEmail(email: string, formUrl: string = process.env.DOCTOR_REGISTRATION_FORM_URL || "https://docs.google.com/forms/d/e/1FAIpQLScs7Z55FqCM_4Nablz5y5vgQ0PhYGu2cM7kJZbmfihF3N9W0g/viewform?usp=dialog") {
   const mailOptions = {
     from: `DoktorOnline <${process.env.EMAIL_USER}>`,
-    replyTo: 'pixelnext9@gmail.com',
+    replyTo: process.env.REPLY_TO_EMAIL || process.env.EMAIL_USER,
     to: email,
     subject: 'Registracija za DoktorOnline platformu 👨‍⚕️',
     text: `Hvala na interesovanju za DoktorOnline! 
     Sledeći korak: popunite formu sa osnovnim informacijama o ordinaciji.
     Prednosti: 6 mjeseci besplatno, 50% popust zauvijek, prioritetna pozicija.
-    Pitanja? +387 66 603 900`,
+    Pitanja? ${process.env.CONTACT_PHONE || '+387 66 603 900'}`,
     html: `
     <div style="display:none;max-height:0;overflow:hidden;opacity:0">
       Registrujte ordinaciju na DoktorOnline - 6 mjeseci besplatno + 50% popust zauvijek
@@ -72,15 +72,15 @@ export async function sendWelcomeEmail(email: string, formUrl: string = "https:/
                 </ul>
                 
                 <p style="margin:20px 0 0 0;color:#333">
-                  Pitanja? Odgovorite na ovaj email ili pozovite 
-                  <a href="tel:+38766603900" style="color:#0066cc;text-decoration:none;font-weight:bold">+387 66 603 900</a>.
+                  Pitanja? Odgovorite na ovaj email ili pozovite
+                  <a href="tel:${process.env.CONTACT_PHONE || '+38766603900'}" style="color:#0066cc;text-decoration:none;font-weight:bold">${process.env.CONTACT_PHONE || '+387 66 603 900'}</a>.
                 </p>
               </td>
             </tr>
             <tr>
               <td style="padding:20px;text-align:center;color:#666;font-size:12px">
-                DoktorOnline | BiH • 
-                <a href="https://doktoronline.vercel.app/privatnost" style="color:#444">Politika privatnosti</a>
+                DoktorOnline | BiH •
+                <a href="${process.env.NEXT_PUBLIC_PRODUCTION_URL || 'https://doktoronline.ba'}/privatnost" style="color:#444">Politika privatnosti</a>
               </td>
             </tr>
           </table>

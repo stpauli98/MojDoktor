@@ -1,12 +1,14 @@
 export default function StructuredData() {
+  const baseUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL || "https://doktoronline.ba"
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "DoktorOnline",
     "description": "Prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online",
-    "url": "https://doktoronline.ba",
-    "logo": "https://doktoronline.ba/medical-center-logo.png",
-    "image": "https://doktoronline.ba/medical-center-logo.png",
+    "url": baseUrl,
+    "logo": `${baseUrl}/medical-center-logo.png`,
+    "image": `${baseUrl}/medical-center-logo.png`,
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "BA",
@@ -25,14 +27,14 @@ export default function StructuredData() {
     "priceRange": "Besplatno",
     "openingHours": "Mo-Su 00:00-23:59",
     "sameAs": [
-      "https://www.facebook.com/doktoronline.ba",
-      "https://www.instagram.com/doktoronline.ba"
+      process.env.FACEBOOK_URL || "https://www.facebook.com/doktoronline.ba",
+      process.env.INSTAGRAM_URL || "https://www.instagram.com/doktoronline.ba"
     ],
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://doktoronline.ba/doktori?q={search_term_string}"
+        "urlTemplate": `${baseUrl}/doktori?q={search_term_string}`
       },
       "query-input": "required name=search_term_string"
     }

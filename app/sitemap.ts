@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://doktoronline.ba'
+  const baseUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL || 'https://doktoronline.ba'
   const lastModified = new Date('2024-01-01') // Fixed date for better caching
   
   return [

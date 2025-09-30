@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Politika Privatnosti - DoktorOnline",
     description: "Politika privatnosti DoktorOnline platforme",
-    url: "https://doktoronline.ba/privatnost",
+    url: `${process.env.NEXT_PUBLIC_PRODUCTION_URL || "https://doktoronline.ba"}/privatnost`,
     type: "website"
   }
 }
@@ -158,8 +158,8 @@ export default function PrivatnostPage() {
                 </p>
                 <div className="bg-blue-50 p-6 rounded-lg mt-4">
                   <ul className="space-y-2">
-                    <li><strong>Email:</strong> <a href="mailto:pixelnext9@gmail.com" className="text-blue-600 hover:text-blue-800">pixelnext9@gmail.com</a></li>
-                    <li><strong>Telefon:</strong> <a href="tel:+38766603900" className="text-blue-600 hover:text-blue-800">+387 66 603 900</a></li>
+                    <li><strong>Email:</strong> <a href={`mailto:${process.env.CONTACT_EMAIL || 'pixelnext9@gmail.com'}`} className="text-blue-600 hover:text-blue-800">{process.env.CONTACT_EMAIL || 'pixelnext9@gmail.com'}</a></li>
+                    <li><strong>Telefon:</strong> <a href={`tel:${process.env.CONTACT_PHONE || '+38766603900'}`} className="text-blue-600 hover:text-blue-800">{process.env.CONTACT_PHONE || '+387 66 603 900'}</a></li>
                     <li><strong>Adresa:</strong> Gradiška, Bosna i Hercegovina</li>
                     <li><strong>Radno vrijeme:</strong> Ponedjeljak - Petak, 9:00 - 17:00</li>
                   </ul>

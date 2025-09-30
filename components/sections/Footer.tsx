@@ -22,15 +22,15 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-foreground">Kontakt</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="mailto:pixelnext9@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                <a href={`mailto:${process.env.CONTACT_EMAIL || 'pixelnext9@gmail.com'}`} className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  pixelnext9@gmail.com
+                  {process.env.CONTACT_EMAIL || 'pixelnext9@gmail.com'}
                 </a>
               </li>
               <li>
-                <a href="tel:+38766603900" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                <a href={`tel:${process.env.CONTACT_PHONE || '+38766603900'}`} className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  +387 66 603 900
+                  {process.env.CONTACT_PHONE || '+387 66 603 900'}
                 </a>
               </li>
               <li className="text-muted-foreground flex items-start gap-2">
@@ -57,9 +57,9 @@ export default function Footer() {
 
           <p className="mt-2">
             Stranicu je napravio{' '}
-            <a 
-              href="https://www.nextpixel.dev" 
-              target="_blank" 
+            <a
+              href={process.env.COMPANY_WEBSITE || "https://www.nextpixel.dev"}
+              target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics"
 import StructuredData from "@/components/seo/StructuredData"
 import { Suspense } from "react"
 import { LocomotiveScrollProvider } from "@/components/ui/locomotive-scroll-provider"
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "DoktorOnline je prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online. Pretraga po gradu i specijalizaciji.",
   keywords: "doktor online, ljekar BiH, zakazivanje termina, medicinska platforma, zdravstvo BiH",
 
-  metadataBase: new URL("https://doktoronline.ba"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_PRODUCTION_URL || "https://doktoronline.ba"),
   alternates: {
     canonical: "/"
   },
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DoktorOnline - Pronađi Doktora u BiH",
     description: "Prva platforma u BiH za pronalaženje doktora i zakazivanje termina online",
-    url: "https://doktoronline.ba",
+    url: process.env.NEXT_PUBLIC_PRODUCTION_URL || "https://doktoronline.ba",
     type: "website",
     locale: "bs_BA",
     siteName: "DoktorOnline"
@@ -55,6 +56,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bs">
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className={`font-sans ${inter.variable} ${GeistMono.variable}`}>
         <StructuredData />
         <LocomotiveScrollProvider>
