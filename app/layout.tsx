@@ -63,7 +63,7 @@ export default function RootLayout({
         </LocomotiveScrollProvider>
         <Analytics />
       </body>
-      <GoogleAnalytics gaId={"G-NWDGQVF8N2"} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!} />
     </html>
   )
 }
