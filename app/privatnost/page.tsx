@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 
+
 export const metadata: Metadata = {
   title: "Politika Privatnosti - DoktorOnline",
   description: "Politika privatnosti DoktorOnline platforme. Saznajte kako čuvamo i koristimo vaše podatke u skladu sa GDPR standardima.",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     type: "website"
   }
 }
+ 
 
 export default function PrivatnostPage() {
   return (
