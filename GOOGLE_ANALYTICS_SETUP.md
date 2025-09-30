@@ -20,16 +20,16 @@ Kreirana: `components/analytics/GoogleAnalytics.tsx`
 ### 3. **Layout Integration**
 Dodano u `app/layout.tsx`:
 - ✅ Import Google Analytics komponente
-- ✅ Postavka u `<head>` sekciji za pravilno učitavanje
+- ✅ Postavka na vrhu `<body>` sekcije za pravilno učitavanje
 - ✅ Kombinovano sa postojećim Vercel Analytics
+- ✅ **POPRAVKA:** Uklonjen nedozvoljeni `<head>` tag iz App Router
 
 ## 🏗️ **Arhitektura**
 
 ```
 app/layout.tsx
-├── <head>
-│   └── <GoogleAnalytics />  (G-NWDGQVF8N2)
 └── <body>
+    ├── <GoogleAnalytics />  (G-NWDGQVF8N2) ⚡ ISPRAVKA
     ├── <StructuredData />
     ├── <LocomotiveScrollProvider>
     │   └── {children}

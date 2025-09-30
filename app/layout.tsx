@@ -56,10 +56,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bs">
-      <head>
-        <GoogleAnalytics />
-      </head>
       <body className={`font-sans ${inter.variable} ${GeistMono.variable}`}>
+        <GoogleAnalytics />
         <StructuredData />
         <LocomotiveScrollProvider>
           <Suspense fallback={<div>Učitavanje...</div>}>{children}</Suspense>
