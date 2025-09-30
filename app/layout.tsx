@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
-import GoogleAnalytics from "@/components/analytics/GoogleAnalytics"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import StructuredData from "@/components/seo/StructuredData"
 import { Suspense } from "react"
 import { LocomotiveScrollProvider } from "@/components/ui/locomotive-scroll-provider"
@@ -57,13 +57,13 @@ export default function RootLayout({
   return (
     <html lang="bs">
       <body className={`font-sans ${inter.variable} ${GeistMono.variable}`}>
-        <GoogleAnalytics />
         <StructuredData />
         <LocomotiveScrollProvider>
           <Suspense fallback={<div>Učitavanje...</div>}>{children}</Suspense>
         </LocomotiveScrollProvider>
         <Analytics />
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""} />
     </html>
   )
 }
