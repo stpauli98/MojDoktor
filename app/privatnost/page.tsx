@@ -32,7 +32,7 @@ export default function PrivatnostPage() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Uvod</h2>
                 <p>
-                  DoktorOnline ("mi", "naša", "platforma") posvećena je zaštiti vaše privatnosti.
+                  DoktorOnline (&quot;mi&quot;, &quot;naša&quot;, &quot;platforma&quot;) posvećena je zaštiti vaše privatnosti.
                   Ova politika privatnosti objašnjava kako prikupljamo, koristimo i štitimo vaše
                   lične podatke kada koristite našu platformu za povezivanje pacijenata i doktora u BiH.
                 </p>
