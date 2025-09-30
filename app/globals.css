@@ -1,34 +1,33 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match exact design specifications */
-  --background: #f9fafb; /* Gray background as specified */
-  --foreground: #0f172a; /* Dark text as specified */
+  /* Medical color scheme for healthcare platform */
+  --background: #f9fafb;
+  --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
-  --primary: #1e40af; /* Medical blue - trust and security */
+  --primary: #0d9488; /* Medical teal - trust and healing */
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #0f172a;
   --muted: #f1f5f9;
-  --muted-foreground: #6b7280; /* Medical gray */
-  --accent: #0d9488; /* Medical teal for accent */
+  --muted-foreground: #6b7280;
+  --accent: #1e40af; /* Medical blue for accent */
   --accent-foreground: #ffffff;
-  --destructive: #dc2626; /* Medical red for emergency */
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #ffffff;
-  --ring: #1e40af; /* Medical blue ring */
-  --success: #059669; /* Medical green for positive health */
+  --ring: #0d9488; /* Medical teal ring */
+  --success: #059669;
   --success-foreground: #ffffff;
-  --chart-1: #1e40af; /* Medical blue */
+  --chart-1: #0d9488; /* Medical teal */
   --chart-2: #059669; /* Medical green */
-  --chart-3: #0d9488; /* Medical teal */
+  --chart-3: #1e40af; /* Medical blue */
   --chart-4: #dc2626; /* Medical red */
   --chart-5: #6b7280; /* Medical gray */
   --radius: 0.5rem;
@@ -36,10 +35,10 @@
   --sidebar-foreground: #0f172a;
   --sidebar-primary: #ffffff;
   --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #2a6edb;
+  --sidebar-accent: #0d9488;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #e2e8f0;
-  --sidebar-ring: #2a6edb;
+  --sidebar-ring: #0d9488;
 }
 
 .dark {
@@ -49,38 +48,37 @@
   --card-foreground: #f8fafc;
   --popover: #1e293b;
   --popover-foreground: #f8fafc;
-  --primary: #1e40af; /* Medical blue */
+  --primary: #14b8a6; /* Lighter medical teal for dark mode */
   --primary-foreground: #ffffff;
   --secondary: #334155;
   --secondary-foreground: #f8fafc;
   --muted: #334155;
-  --muted-foreground: #6b7280; /* Medical gray */
-  --accent: #0d9488; /* Medical teal */
+  --muted-foreground: #6b7280;
+  --accent: #3b82f6; /* Medical blue */
   --accent-foreground: #ffffff;
-  --destructive: #dc2626; /* Medical red */
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --border: #334155;
   --input: #1e293b;
-  --ring: #1e40af; /* Medical blue ring */
-  --success: #059669; /* Medical green */
+  --ring: #14b8a6; /* Medical teal ring */
+  --success: #059669;
   --success-foreground: #ffffff;
-  --chart-1: #1e40af; /* Medical blue */
+  --chart-1: #14b8a6; /* Medical teal */
   --chart-2: #059669; /* Medical green */
-  --chart-3: #0d9488; /* Medical teal */
+  --chart-3: #3b82f6; /* Medical blue */
   --chart-4: #dc2626; /* Medical red */
   --chart-5: #6b7280; /* Medical gray */
   --sidebar: #0f172a;
   --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #1e40af; /* Medical blue */
+  --sidebar-primary: #14b8a6;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #0d9488; /* Medical teal */
+  --sidebar-accent: #3b82f6;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #334155;
-  --sidebar-ring: #1e40af; /* Medical blue */
+  --sidebar-ring: #14b8a6;
 }
 
 @theme inline {
-  /* Updated font variables to use Inter */
   --font-sans: "Inter", var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
@@ -104,11 +102,11 @@
   --color-ring: var(--ring);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
-  --color-chart-1: var(--chart-1); /* Medical blue */
-  --color-chart-2: var(--chart-2); /* Medical green */
-  --color-chart-3: var(--chart-3); /* Medical teal */
-  --color-chart-4: var(--chart-4); /* Medical red */
-  --color-chart-5: var(--chart-5); /* Medical gray */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -132,7 +130,6 @@
   }
 }
 
-/* Added container utilities for 1440px desktop grid with 12 columns and 24px gutter */
 @layer utilities {
   .container {
     max-width: 1440px;
@@ -148,6 +145,242 @@
       padding-left: 16px;
       padding-right: 16px;
     }
+  }
+
+  /* Medical Enhancement Utilities */
+  .medical-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .trust-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .trust-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-medical {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .medical-badge {
+    background: rgba(13, 148, 136, 0.1);
+    color: #0d9488;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .medical-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .medical-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .medical-button:hover::before {
+    left: 100%;
+  }
+
+  .medical-card {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  }
+
+  .medical-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .medical-focus:focus-visible {
+    outline: 2px solid #0d9488;
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  .medical-gradient {
+    background: linear-gradient(135deg, #0d9488 0%, #1e40af 100%);
+  }
+
+  .bg-primary-dark {
+    background-color: #0891b2;
+  }
+
+  .hover\:bg-primary-dark:hover {
+    background-color: #0891b2;
+  }
+
+  .bg-primary-light {
+    background-color: rgba(13, 148, 136, 0.1);
+  }
+
+  .bg-primary-light\/20 {
+    background-color: rgba(13, 148, 136, 0.2);
+  }
+
+  .bg-primary-light\/30 {
+    background-color: rgba(13, 148, 136, 0.3);
+  }
+
+  .bg-primary-light\/10 {
+    background-color: rgba(13, 148, 136, 0.1);
+  }
+
+  .bg-primary-light\/50 {
+    background-color: rgba(13, 148, 136, 0.5);
+  }
+
+  .hover\:bg-primary-light\/50:hover {
+    background-color: rgba(13, 148, 136, 0.5);
+  }
+
+  .hover\:border-primary\/20:hover {
+    border-color: rgba(13, 148, 136, 0.2);
+  }
+
+  /* Performance-optimized hover effects */
+  @media (hover: hover) and (pointer: fine) {
+    .hover\:scale-105:hover {
+      transform: scale3d(1.05, 1.05, 1);
+    }
+
+    .hover\:scale-110:hover {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+
+    .hover\:translate-x-1:hover {
+      transform: translate3d(0.25rem, 0, 0);
+    }
+
+    .group:hover .group-hover\:translate-x-1 {
+      transform: translate3d(0.25rem, 0, 0);
+    }
+
+    .group:hover .group-hover\:scale-110 {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+
+  /* Fallback for touch devices */
+  @media (hover: none) {
+    .hover\:scale-105,
+    .hover\:scale-110,
+    .hover\:translate-x-1 {
+      transition: none;
+    }
+  }
+
+  /* Optimized hover effects for better performance */
+
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .text-transparent {
+    color: transparent;
+  }
+
+  /* Medical Animation Keyframes */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translate3d(-30px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translate3d(30px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale3d(0.95, 0.95, 1);
+    }
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 0.7;
+      transform: scale3d(1, 1, 1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale3d(1.05, 1.05, 1);
+    }
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.8s ease-out;
   }
 }
 
@@ -235,12 +468,12 @@ body {
   overscroll-behavior: none;
 }
 
-/* Locomotive scroll reveal animation */
-[data-scroll] {
+/* Locomotive scroll reveal animation - DISABLED to prevent component covering */
+/* [data-scroll] {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 [data-scroll]:not(.is-inview) {
   opacity: 0;
   transform: translateY(20px);
-}
+} */

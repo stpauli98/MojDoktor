@@ -14,13 +14,22 @@ const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  fallback: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "system-ui",
+    "sans-serif"
+  ],
 })
 
 export const metadata: Metadata = {
   title: "DoktorOnline - Pronađi Doktora u BiH",
   description:
     "DoktorOnline je prva platforma u BiH gdje pacijenti mogu pronaći doktore, pročitati recenzije i zakazati termine online. Pretraga po gradu i specijalizaciji.",
-  keywords: "doktor online, ljekar BiH, zakazivanje termina, medicinska platforma, zdravstvo BiH",
+  keywords: "doktor online, doktor onlajn, ljekar BiH, zakazivanje termina, medicinska platforma, zdravstvo BiH",
 
   metadataBase: new URL(process.env.NEXT_PUBLIC_PRODUCTION_URL || "https://doktoronline.ba"),
   alternates: {
@@ -56,14 +65,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bs">
+      <head>
+        {/* Critical CSS preload */}
+        <link
+          rel="preload"
+          href="/_next/static/css/app/layout.css"
+          as="style"
+          crossOrigin="anonymous"
+        />
+        {/* DNS prefetch for faster third-party loads */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      </head>
       <body className={`font-sans ${inter.variable} ${GeistMono.variable}`}>
         <StructuredData />
         <LocomotiveScrollProvider>
-          <Suspense fallback={<div>Učitavanje...</div>}>{children}</Suspense>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center min-h-screen bg-background">
+                <div className="animate-pulse medical-badge">Učitava se...</div>
+              </div>
+            }
+          >
+            {children}
+          </Suspense>
         </LocomotiveScrollProvider>
         <Analytics />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!} />
+      <GoogleAnalytics gaId="G-NWDGQVF8N2" />
     </html>
   )
 }
